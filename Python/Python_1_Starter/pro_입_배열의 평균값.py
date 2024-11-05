@@ -6,12 +6,10 @@ def solution(numbers):
 
 
 """
-#sol_1 
+#sol_1 이게 뭐야 
 import numpy as np
 def solution(numbers):
     return np.mean(numbers)
-
--> 질문
 
 #sol_2
 def solution(numbers):
