@@ -2,9 +2,6 @@
 print((h-1) % 24 if m < 45 else h, (m+15) % 60)
 => 나머지 이용하여 간락히 계산 가능
 
-'두 개 이상의 자료 인풋 삽입'
-a,b = map(int, input().split())
-
 '삼항연산자' 
 print('a') if ~ else ~ 연속 사용가능
 print("Yes" if price == total else "No")
@@ -53,17 +50,19 @@ while True:
 '리스트 안의 요소만 출력'
 1. print(" ".join(map(str, L)))
 2. print(*L)
+3. print(*L, sep='\n') # 모든 요소를 줄바꿈하여 출력
 
 '자연수 리스트 생성'
 L = [x+1 for x in range(n)]
 -> L = list(range(1, n + 1))
 
-'리스트 값 한번에 교체 가능'
-L[i - 1], L[j - 1] = L[j - 1], L[i - 1]
-
 '리스트에서 특정 값 모두 삭제'
 L = [x for x in L if x != 3]
 L = list(filter(lambda x: x != 3, L))
+
+'리스트 요소 한 줄에 20개씩 출력'
+for i in range(0, n, 20):
+    print(*L[i:i+20])
 
 '리스트 슬라이싱'
 for _ in range(m) : 
@@ -80,21 +79,20 @@ for _ in range(m):
 '여러 값 포함 리스트 생성'
 #1 sys.stdin.readline().split()도 가능
 L = list(map(int, input().split()))
-print(L)
 
 #2 리스트 컴프리헨션
 L = [int(x) for x in input().split()]
-print(L)
 
 #3 numpy
 import numpy as np
 L = np.array(list(map(int, input().split())))
-print(L)
 
 'enurmerate 함수 : index와 value 반환'
 s = "hello"
 for idx, c in enumerate(s):
     print(f"Index: {idx}, Character: {c}")
+=> for i in range(len(words)):
+    word = words[i]  과 동일한 코드
 
 'join 함수'
 print(''.join(x * int(r) for x in s))
@@ -128,3 +126,19 @@ print(*row)로 열 단위 출력 가능
 '진법 변환'
 n진법 숫자 a -> 10진법 변환
 int(n, a)
+
+'리스트 컴프리핸션'
+L = [x for x in range(m, n + 1) if x > 1 and all(x % k != 0 for k in range(2, int(x**0.5) + 1))]
+
+'리스트 요소 존재 여부'
+if L : -> L에 원소가 존재하면 True로 작동
+
+'반복문 코테'
+for i <- 1 to n - 2 와 같이 표기 가능 (1 ~ n-2)
+    
+'f-string 이용 값 변경'
+words[i] = f'[{words[i][0]}]{words[i][1:]}'
+
+'비트 반전(0은 1로, 1은 0으로)'
+L[num-1] = 1 - L[num-1]
+-> L[i] ^= 1 사용 가능
