@@ -6,7 +6,7 @@ print((h-1) % 24 if m < 45 else h, (m+15) % 60)
 print('a') if ~ else ~ 연속 사용가능
 print("Yes" if price == total else "No")
 => 하나의 프린트문 안에서 삼항연산자 사용 가능
-
+=> if만 사용 불가 / if, else가 항상 같이 사용돼야함
 
 '입력 시간 단축'
 예를 들어, 100만 개의 숫자를 한 줄씩 입력받아야 한다면?
@@ -50,11 +50,8 @@ while True:
 '리스트 안의 요소만 출력'
 1. print(" ".join(map(str, L)))
 2. print(*L)
-3. print(*L, sep='\n') # 모든 요소를 줄바꿈하여 출력
-
-'자연수 리스트 생성'
-L = [x+1 for x in range(n)]
--> L = list(range(1, n + 1))
+3. print(*L, sep='\n') #모든 요소 줄바꿔 모두 출력
+4. print('\n'.join(output)) #모든 요소 줄바꿔 모두 출력
 
 '리스트에서 특정 값 모두 삭제'
 L = [x for x in L if x != 3]
@@ -64,17 +61,10 @@ L = list(filter(lambda x: x != 3, L))
 for i in range(0, n, 20):
     print(*L[i:i+20])
 
-'리스트 슬라이싱'
-for _ in range(m) : 
-    i, j = map(int, input().split())
-    for k in range((j-i+1)//2) :
-        L[i-1+k], L[j-1-k] = L[j-1-k], L[i-1+k]
-
-=> 리스트 슬라이싱 활용
+'리스트 슬라이싱 활용'
 for _ in range(m):
     i, j = map(int, input().split())
     L[i-1:j] = L[i-1:j][::-1]
-
 
 '여러 값 포함 리스트 생성'
 #1 sys.stdin.readline().split()도 가능
@@ -129,12 +119,6 @@ int(n, a)
 
 '리스트 컴프리핸션'
 L = [x for x in range(m, n + 1) if x > 1 and all(x % k != 0 for k in range(2, int(x**0.5) + 1))]
-
-'리스트 요소 존재 여부'
-if L : -> L에 원소가 존재하면 True로 작동
-
-'반복문 코테'
-for i <- 1 to n - 2 와 같이 표기 가능 (1 ~ n-2)
     
 'f-string 이용 값 변경'
 words[i] = f'[{words[i][0]}]{words[i][1:]}'
@@ -142,3 +126,4 @@ words[i] = f'[{words[i][0]}]{words[i][1:]}'
 '비트 반전(0은 1로, 1은 0으로)'
 L[num-1] = 1 - L[num-1]
 -> L[i] ^= 1 사용 가능
+

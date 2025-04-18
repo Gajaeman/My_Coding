@@ -1,9 +1,4 @@
-"""
 import sys
-N = int(sys.stdin.readline())
-"""
-
-import sys # 38932kb / 524ms
 num = int(sys.stdin.readline())
 dp = [0] * (num + 1)
 
