@@ -127,3 +127,16 @@ words[i] = f'[{words[i][0]}]{words[i][1:]}'
 L[num-1] = 1 - L[num-1]
 -> L[i] ^= 1 사용 가능
 
+'모든 조합 생성'
+from itertools import combinations
+combinations([1,2,3], 2) 
+-> [1,2,3]에서 2개 선택하여 나오는 모든 조합 튜플로 생성
+
+'deque'
+from collections import deque
+-> 리스트에서 0번 인덱스의 값을 빠르게 빼면서 반환시킬 수 있음
+-> popleft() 사용
+
+'reversed'
+reversed(Data) 는 객체 주소를 가리킴
+-> 값으로 사용하려면 list(), set()등 형식 지정 필요

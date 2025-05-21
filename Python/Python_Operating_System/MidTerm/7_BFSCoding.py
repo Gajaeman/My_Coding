@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input.txt', 'r')
+sys.stdin = open('7_input.txt', 'r')
 
 Visited = [False] * 8
 
