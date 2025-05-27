@@ -1,34 +1,37 @@
-MyMap = [list(input()) for _ in range(5)]
-stack = []
-num = []
-cnt = 0
+from itertools import combinations
+from collections import deque
 
-def is_near(p):
-    for k in num:
-        if k - 1 == p or k + 1 == p or k + 5 == p or k - 5 == p:
-            return True
+graph = [list(input()) for _ in range(5)]
+answer = 0
 
-def dfs(start):
-    global cnt
-    if stack.count('Y') >= 4 : return
-    elif len(stack) == 7 :
-        cnt += 1
-        return
-    for i in range(start, 25):
-        if not stack :
-            stack.append(MyMap[i//5][i%5])
-            num.append(i)
-            dfs(i)
-            stack.pop()
-            num.pop()
-        else :
-            if is_near(i):
-                stack.append(MyMap[i//5][i%5])
-                num.append(i)
-                dfs(i)
-                stack.pop()
-                num.pop()
-    return
+def is_connected(comb):
+    visited = [False] * 7
+    q = deque([0])
+    visited[0] = True
+    count = 1
 
-dfs(0)
-print(cnt)
+    while q:
+        cur = q.popleft()
+        y1, x1 = comb[cur] // 5, comb[cur] % 5
+        for i in range(7):
+            if not visited[i]:
+                y2, x2 = comb[i] // 5, comb[i] % 5
+                if abs(y1 - y2) + abs(x1 - x2) == 1:
+                    visited[i] = True
+                    q.append(i)
+                    count += 1
+
+    return count == 7
+
+for comb in combinations(range(25), 7):
+    s_count = 0
+    for i in comb:
+        y, x = i // 5, i % 5
+        if graph[y][x] == 'S':
+            s_count += 1
+    if s_count < 4:
+        continue
+    if is_connected(list(comb)):
+        answer += 1
+
+print(answer)
