@@ -17,7 +17,7 @@ for i in range(1, n):
     if j+1 != i:
         Data[j+1] = key
         cnt += 1
-        if cnt == k :
-            print(Data[j+1])
-            exit()
+    if cnt == k :
+        print(Data[j+1])
+        exit()
 print(-1)

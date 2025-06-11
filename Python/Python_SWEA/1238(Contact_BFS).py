@@ -29,3 +29,40 @@ for tc in range(1, 11):
             ans = i
 
     print(f"#{tc} {ans}")
+
+''' # deque Ver
+from collections import deque
+
+for tc in range(1, 11):
+    length, start = map(int, input().split())
+    L = list(map(int, input().split()))
+    
+    Data = [[] for _ in range(101)]
+    visited = [0] * 101
+
+    for i in range(0, length, 2):
+        Data[L[i]].append(L[i+1])
+
+    q = deque()
+    q.append((start, 0))
+    visited[start] = 1
+
+    max_depth = 0
+    result = start
+
+    while q:
+        now, depth = q.popleft()
+
+        if depth > max_depth:
+            max_depth = depth
+            result = now
+        elif depth == max_depth:
+            result = max(result, now)
+
+        for nxt in Data[now]:
+            if not visited[nxt]:
+                visited[nxt] = 1
+                q.append((nxt, depth + 1))
+
+    print(f"#{tc} {result}")
+'''
