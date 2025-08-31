@@ -1,5 +1,4 @@
-import sys
-sys.stdin = open("9_YoseQueue.txt", 'r')
+
 howmany, K = map(int, input().split())
 Queue = list(range(1, howmany+1))
 print('<', end = '')
