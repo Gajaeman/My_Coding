@@ -101,6 +101,7 @@ sort의 세번째 인자에 사용자 정의 함수 삽입하여 사용 가능
 
 "n번 반복된 문자열"
 string res = string(cnt, "1"); // "1"을 cnt만큼 반복한 문자열 생성
+string underscore(cur * 4, '_'); // 이렇게도 사용 가능
 
 "문자열 -> 수 변환"
 long long num = stoll(N); // 문자열 N을 long long으로 변환
@@ -114,3 +115,7 @@ int형 계산 중 overflow가 발생하는 지점에서 임시로 long long 타�
 
 "for (auto &s : v)"
 for문에서 v의 원소에 따라 값 타임 자동 할당
+
+"벡터.resize(n)" // // 벡터 크기 n으로 변경
+
+"set자료형은 검색이 빠르다 -> if(s.count(x))로 x가 있는지 확인 가능"

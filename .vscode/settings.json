@@ -1,4 +1,5 @@
 {
+    // C++ 헤더 인식 설정
     "files.associations": {
         "iostream": "cpp",
         "string": "cpp",
@@ -66,6 +67,48 @@
         "thread": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "valarray": "cpp"
-    }
+        "valarray": "cpp",
+        "any": "cpp",
+        "barrier": "cpp",
+        "bit": "cpp",
+        "charconv": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "coroutine": "cpp",
+        "expected": "cpp",
+        "optional": "cpp",
+        "source_location": "cpp",
+        "string_view": "cpp",
+        "flat_map": "cpp",
+        "flat_set": "cpp",
+        "format": "cpp",
+        "generator": "cpp",
+        "latch": "cpp",
+        "numbers": "cpp",
+        "print": "cpp",
+        "queue": "cpp",
+        "ranges": "cpp",
+        "semaphore": "cpp",
+        "span": "cpp",
+        "spanstream": "cpp",
+        "stack": "cpp",
+        "stacktrace": "cpp",
+        "stdfloat": "cpp",
+        "stop_token": "cpp",
+        "syncstream": "cpp",
+        "text_encoding": "cpp",
+        "variant": "cpp"
+    },
+
+    // Java 프로젝트 인식 설정
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+
+    // 네 PC에 설치된 JDK 경로 (JDK 17 기준, 네 환경에 맞게 수정)
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-17",
+            "path": "C:\\Program Files\\Java\\jdk-17"
+        }
+    ]
 }
