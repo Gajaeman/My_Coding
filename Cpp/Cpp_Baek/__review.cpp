@@ -2,18 +2,25 @@
 
 #include <iostream> // 표준 입출력 헤더파일(cin, cout...)
 #include <string> // string 타입 사용시 필요
+#include <cstring> // strchr, strcmp 등 문자열 함수 사용시 필요
 #include <cstdio> // printf, scanf 사용시 필요(C 표준 입출력 라이브러리)
 #include <cmath> // pow 등 수학 계산 사용시 필요(제곱은 **이 더 나음)
 #include <algorithm> // 정렬, 값 탐색, 수정/변형, 조건검사/비교
+#include <vector> // vector 자료형 사용시 필요
+#include <set> // set 자료형 사용시 필요
+#include <map> // map 자료형 사용시 필요
+#include <queue> // queue, priority_queue 자료형 사용시 필요
+#include <stack> // stack 자료형 사용시 필요
+#include <iomanip> // setw, setfill(), setprecision() 사용시 필요
+#include <sstream> // ostringstream 사용시 필요
 
 using namespace std; // 안쓰면  std::cin 이런 식으로 써야함
 
 "n번째 소수점까지 출력"
-#include <iomanip> // setprecision 사용시 필요
 cout << fixed << setprecision(1) << cal; // cal을 소수 1번째 자리까지 출력
 cout << fixed;
 cout.precision(1);
-cout<<ans; // 좌측과같이 코딩 가능
+cout << ans; // 좌측과같이 코딩 가능
 
 "C++ 표준 입출력과 C 입출력 동기화 OFF"
 ios::sync_with_stdio(false); // cin cout만 쓰면 C stream 필요 X -> 해제시킴으로써 C stream 의 불필요 연산 제거
@@ -117,5 +124,10 @@ int형 계산 중 overflow가 발생하는 지점에서 임시로 long long 타�
 for문에서 v의 원소에 따라 값 타임 자동 할당
 
 "벡터.resize(n)" // // 벡터 크기 n으로 변경
-
 "set자료형은 검색이 빠르다 -> if(s.count(x))로 x가 있는지 확인 가능"
+"ostringstream" // 여러 문자열을 << 연산자로 이어붙여서 저장 
+                //string 을 +연산자로 이어붙이는 것보다 상황에 따라 더 효율적
+"substr(a, b)" // a번째 인덱스부터 b개 문자열 반환
+"setw(n)" // 출력할 문자열의 최소 너비를 n으로 설정
+"setfill(c)" // 너비 n보다 짧은 문자열 앞을 문자 c로 채움
+"if (strchr("HPY", c)) hap++;" // c가 "HPY"에 포함되어 있으면 hap 증가
