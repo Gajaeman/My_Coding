@@ -131,3 +131,8 @@ for문에서 v의 원소에 따라 값 타임 자동 할당
 "setw(n)" // 출력할 문자열의 최소 너비를 n으로 설정
 "setfill(c)" // 너비 n보다 짧은 문자열 앞을 문자 c로 채움
 "if (strchr("HPY", c)) hap++;" // c가 "HPY"에 포함되어 있으면 hap 증가
+
+"문자열 한 번에 출력" (#include <sstream> 필요)
+ostringstream out;
+out << "Hello" << "\n" << "World" << "\n"; // 여러 문자열을 << 연산자로 이어붙여서 저장
+cout << out.str(); // str()로 한 번에 출력

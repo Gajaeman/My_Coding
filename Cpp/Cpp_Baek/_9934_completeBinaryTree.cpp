@@ -6,8 +6,7 @@ int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int K;
-    if(!(cin >> K)) return 0;
+    int K; cin >> K;
     int n = (1 << K) - 1;
 
     vector<int> a(n);
